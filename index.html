@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    position: absolute;
+  }
+  
+  #wrapper {
+    position: relative;
+  }
+
+  #link {
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+
+<img src="worldcup.png" width="100%" usemap="#map"> 
+
+<div id="wrapper">
+  <a href="http://kakao.com" onclick="deviceAlert();"><div id="link"></div></a>
+</div>
+
+<script>
+  var linkwidth = 540/640 * 100;
+  var linkheight = 77/2800 * $("img").height();
+  var leftindex = 50/640 * 100;
+  var topindex = 1428/2800 * $("img").height();
+
+  $("#link").css({"left": leftindex+"%", "top": topindex, "width": linkwidth+"%", "height": linkheight});
+
+  function deviceAlert() {
+    if(!( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) )) {
+      alert("Only Available on Andriod and IOS");
+      event.preventDefault();
+    }
+  }
+
+</script>
+
+</body>
+</html>
